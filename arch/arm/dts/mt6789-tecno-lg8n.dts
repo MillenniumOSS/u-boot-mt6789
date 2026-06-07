@@ -8,9 +8,9 @@
 #include <dt-bindings/input/input.h>
 
 / {
-	model = "Motorola Moto G72";
+	model = "TECNO POVA 4 Pro;
 	chassis-type = "handset";
-	compatible = "motorola,vicky", "mediatek,mt6789";
+	compatible = "tecno,lg8n", "mediatek,mt6789";
 
 	#address-cells = <2>;
 	#size-cells = <2>;
@@ -24,9 +24,9 @@
 		#size-cells = <2>;
 		ranges;
 
-		framebuffer@fe0d0000 {
+		simplefb: framebuffer@fe0c8000 {
 			compatible = "simple-framebuffer";
-			reg = <0x0 0xfe0d0000 0x0 ((1080 + 8) * 2400 * 4)>;
+			reg = <0x0 0xfe0c8000 0x0 ((1080 + 8) * 2400 * 4)>;
 			width = <1080>;
 			height = <2400>;
 			stride = <((1080 + 8) * 4)>;
@@ -43,147 +43,137 @@
 		#address-cells = <0x02>;
 		#size-cells = <0x02>;
 		ranges;
-		phandle = <0xd9>;
+		phandle = <0xd5>;
 
-		mblock-35-shared-dma-pool_wifi-reserve-memory_dma {
-			phandle = <0x238>;
+		mblock-33-shared-dma-pool_wifi-reserve-memory_dma {
+			phandle = <0x21f>;
 			reg = <0x00 0xbf000000 0x00 0x600000>;
 			no-map;
 			compatible = "shared-dma-pool";
 		};
 
-		mblock-34-consys_emi_reserved {
+		mblock-32-consys_emi_reserved {
 			reg = <0x00 0x7d000000 0x00 0x500000>;
 			no-map;
 			compatible = "mediatek,consys_emi_reserved";
 		};
 
-		mblock-33-sspm_ap-shared {
-			reg = <0x00 0x9f560000 0x00 0x110000>;
+		mblock-31-sspm_ap-shared {
+			reg = <0x00 0x9fd60000 0x00 0x110000>;
 			no-map;
 			compatible = "mediatek,sspm_ap-shared";
 		};
 
-		mblock-32-debug_met_res-ram {
-			reg = <0x00 0x9f670000 0x00 0x800000>;
-			no-map;
-			compatible = "mediatek,debug_met_res-ram";
-		};
-
-		mblock-31-ap_md_c_smem {
+		mblock-30-ap_md_c_smem {
 			reg = <0x00 0x8c000000 0x00 0x16a0000>;
 			no-map;
 			compatible = "mediatek,ap_md_c_smem";
 		};
 
-		mblock-30-ap_md_nc_smem {
+		mblock-29-ap_md_nc_smem {
 			reg = <0x00 0x8e000000 0x00 0xe00000>;
 			no-map;
 			compatible = "mediatek,ap_md_nc_smem";
 		};
 
-		mblock-29-md_mem_usage {
+		mblock-28-md_mem_usage {
 			reg = <0x00 0xe3200000 0x00 0xe00000>;
 			no-map;
 			compatible = "mediatek,md_mem_usage";
 		};
 
-		mblock-28-md_mem_usage {
-			reg = <0x00 0xde800000 0x00 0x2b10000>;
-			no-map;
-			compatible = "mediatek,md_mem_usage";
-		};
-
 		mblock-27-md_mem_usage {
-			reg = <0x00 0xddc00000 0x00 0x430000>;
+			reg = <0x00 0xde800000 0x00 0x2c10000>;
 			no-map;
 			compatible = "mediatek,md_mem_usage";
 		};
 
 		mblock-26-md_mem_usage {
-			reg = <0x00 0xdc000000 0x00 0x1490000>;
+			reg = <0x00 0xddc00000 0x00 0x430000>;
 			no-map;
 			compatible = "mediatek,md_mem_usage";
 		};
 
-		mblock-25-ccci_tag_mem {
+		mblock-25-md_mem_usage {
+			reg = <0x00 0xdc000000 0x00 0x14b0000>;
+			no-map;
+			compatible = "mediatek,md_mem_usage";
+		};
+
+		mblock-24-ccci_tag_mem {
 			reg = <0x00 0xbf9f0000 0x00 0x10000>;
 			no-map;
 			compatible = "mediatek,ccci_tag_mem";
 		};
 
-		mblock-24-reserve-memory-scp_share {
+		mblock-23-reserve-memory-scp_share {
 			reg = <0x00 0x8f000000 0x00 0x5a0000>;
 			no-map;
 			compatible = "mediatek,reserve-memory-scp_share";
 		};
 
-		mblock-23-SCP-reserved {
+		mblock-22-SCP-reserved {
 			reg = <0x00 0xbfa00000 0x00 0x400000>;
 			no-map;
 			compatible = "mediatek,SCP-reserved";
 		};
 
-		mblock-22-platform-debug_dfdmcu_dump {
+		mblock-21-platform-debug_dfdmcu_dump {
 			reg = <0x00 0xfd000000 0x00 0x100000>;
 			no-map;
 			compatible = "mediatek,platform-debug_dfdmcu_dump";
 		};
 
-		mblock-21-crypto_hw {
+		mblock-20-crypto_hw {
 			reg = <0x00 0x48401000 0x00 0x1000>;
 			no-map;
 			compatible = "mediatek,crypto_hw";
 		};
 
-		mblock-20-tee-reserved {
-			reg = <0x00 0x70000000 0x00 0x4600000>;
+		mblock-19-tee-reserved {
+			reg = <0x00 0x70000000 0x00 0x6000000>;
 			no-map;
 			compatible = "mediatek,tee-reserved";
 		};
 
-		mblock-19-tee-secmem {
+		mblock-18-tee-secmem {
 			reg = <0x00 0x7de00000 0x00 0x800000>;
 			no-map;
 			compatible = "mediatek,tee-secmem";
 		};
 
-		mblock-18-MCUPM-reserved {
+		mblock-17-MCUPM-reserved {
 			reg = <0x00 0x7feb0000 0x00 0x100000>;
 			no-map;
 			compatible = "mediatek,MCUPM-reserved";
 		};
 
-		mblock-17-SSPM-reserved {
+		mblock-16-SSPM-reserved {
 			reg = <0x00 0x9fe70000 0x00 0x180000>;
 			no-map;
 			compatible = "mediatek,SSPM-reserved";
 		};
 
-		mblock-16-BL31-reserved {
+		mblock-15-BL31-reserved {
 			reg = <0x00 0x48200000 0x00 0x200000>;
 			no-map;
 			compatible = "mediatek,BL31-reserved";
 		};
 
-		mblock-15-framebuffer {
-			reg = <0x00 0xfe0d0000 0x00 0x1f2f000>;
+		mblock-14-framebuffer {
+			reg = <0x00 0xfe0c8000 0x00 0x1f2f000>;
 			compatible = "mediatek,framebuffer";
 		};
 
-		mblock-14-aee_lk {
+		mblock-13-tkv-reserved {
+			reg = <0x00 0xffff7000 0x00 0x8000>;
+			no-map;
+			compatible = "mediatek,tkv-reserved";
+		};
+
+		mblock-12-aee_lk {
 			reg = <0x00 0x50700000 0x00 0x800000>;
 			compatible = "mediatek,aee_lk";
-		};
-
-		mblock-13-pl-boottag {
-			reg = <0x00 0x48600000 0x00 0x100000>;
-			compatible = "mediatek,pl-boottag";
-		};
-
-		mblock-12-pl-drambuf {
-			reg = <0x00 0x48500000 0x00 0x100000>;
-			compatible = "mediatek,pl-drambuf";
 		};
 
 		mblock-11-minirdump {
@@ -199,7 +189,7 @@
 		};
 
 		mblock-9-aee_debug_kinfo {
-			phandle = <0x237>;
+			phandle = <0x21e>;
 			reg = <0x00 0x48080000 0x00 0x10000>;
 			no-map;
 			compatible = "mediatek,aee_debug_kinfo";
