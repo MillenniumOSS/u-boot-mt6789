@@ -976,6 +976,13 @@ config VIDEO_DW_MIPI_DSI
 	  rather requires a SoC-specific glue driver to call it), it
 	  can not be enabled from the configuration menu.
 
+config VIDEO_MTK_CMD_FB
+	bool "MediaTek command-mode framebuffer driver"
+	help
+	  Renders to the framebuffer set up by lk to enable display output on
+          cmd mode panels, like simplefb, this driver assumes the display hardware
+          has already been initialized before u-boot, in our case, lk's bl2_ext
+
 config VIDEO_SIMPLE
 	bool "Simple display driver for preconfigured display"
 	imply VIDEO_DAMAGE
