@@ -24,8 +24,8 @@
 		#size-cells = <2>;
 		ranges;
 
-		simplefb: framebuffer@fe0c8000 {
-			compatible = "simple-framebuffer";
+		fb: framebuffer@fe0c8000 {
+			compatible = "mediatek,mtk-cmd-framebuffer";
 			reg = <0x0 0xfe0c8000 0x0 ((1080 + 8) * 2400 * 4)>;
 			width = <1080>;
 			height = <2400>;
